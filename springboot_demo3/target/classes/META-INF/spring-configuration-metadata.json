@@ -1,0 +1,42 @@
+{
+  "groups": [
+    {
+      "name": "person",
+      "type": "com.dajuancai.pojo.Person",
+      "sourceType": "com.dajuancai.pojo.Person"
+    }
+  ],
+  "properties": [
+    {
+      "name": "person.family",
+      "type": "java.lang.String[]",
+      "sourceType": "com.dajuancai.pojo.Person"
+    },
+    {
+      "name": "person.hobby",
+      "type": "java.util.List",
+      "sourceType": "com.dajuancai.pojo.Person"
+    },
+    {
+      "name": "person.id",
+      "type": "java.lang.Integer",
+      "sourceType": "com.dajuancai.pojo.Person"
+    },
+    {
+      "name": "person.map",
+      "type": "java.util.Map",
+      "sourceType": "com.dajuancai.pojo.Person"
+    },
+    {
+      "name": "person.name",
+      "type": "java.lang.String",
+      "sourceType": "com.dajuancai.pojo.Person"
+    },
+    {
+      "name": "person.pet",
+      "type": "com.dajuancai.pojo.Pet",
+      "sourceType": "com.dajuancai.pojo.Person"
+    }
+  ],
+  "hints": []
+}

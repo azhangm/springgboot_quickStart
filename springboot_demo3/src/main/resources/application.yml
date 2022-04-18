@@ -1,0 +1,14 @@
+server:
+  port: 808
+person:
+  id: 1000
+  family: 草泥马,擦擦
+  map:
+    k1: 这是k1对应的value
+    k2: 这是k2
+  hobby: 抽烟
+    - 喝酒
+    - 烫头p
+  pet:
+    type: dog
+    name: 旺财

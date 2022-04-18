@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>springboot_demo1</artifactId>
+    <version>1.0-SNAPSHOT</version>
+<!--  所有得spring boot 项目都会直接或者间接 得继承 spring-boot-starter-parent
+       1、 制定项目编码格式 位 utf-8
+        2、指定 jdk 版本 1.8
+        3、 对项目依赖版本 进行管理，当前项目在引入其他常用依赖时，无需指定版本号，解决版本冲突
+        4、默认的资源过滤 和 插件管理。
+-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.6.6</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+    <!--可以将 project 打包为一个可以依赖的  jar 包-->
+    <build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+    </plugins>
+</build>
+
+</project>
