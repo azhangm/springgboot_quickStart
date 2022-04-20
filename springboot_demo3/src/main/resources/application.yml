@@ -1,5 +1,5 @@
 server:
-  port: 808
+  port: 80
 person:
   id: 1000
   family: 草泥马,擦擦
@@ -12,3 +12,6 @@ person:
   pet:
     type: dog
     name: 旺财
+spring:
+  main:
+    banner-mode: off
