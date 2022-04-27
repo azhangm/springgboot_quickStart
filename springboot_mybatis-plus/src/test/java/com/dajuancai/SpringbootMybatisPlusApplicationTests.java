@@ -1,6 +1,7 @@
 package com.dajuancai;
 
 import com.dajuancai.dao.AccountDao;
+import com.dajuancai.domain.Account;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,7 +15,10 @@ class SpringbootMybatisPlusApplicationTests {
 
     @Test
     void test(){
-        List list = accountDao.selectList(null);
+        List<Account> list = accountDao.selectList(null);
+        for (Account o : list) {
+            System.out.println(o);
+        }
 
     }
     @Test
