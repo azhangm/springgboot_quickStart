@@ -1,5 +1,7 @@
 package com.dajuancai.mapper;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.dajuancai.domain.Book;
@@ -22,5 +24,20 @@ class BookMapperTest {
     void testPage(){
         IPage page = new Page(1,2);
         mapper.selectPage(page,null);
+    }
+
+    @Test
+    void testBy(){
+        /*
+        *
+        * 动态拼接条件查询
+        *
+        * */
+        String name = "1";
+        LambdaQueryWrapper<Book> lqw = new LambdaQueryWrapper<>();
+        lqw.like(null != name,Book::getName,name);
+        for (Book book : mapper.selectList(lqw)) {
+            System.out.println(book);
+        }
     }
 }
