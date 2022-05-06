@@ -10,32 +10,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 @SpringBootTest
 class BookMapperTest {
     @Autowired
     private BookMapper mapper;
+
     @Test
-    void test(){
+    void test() {
         for (Book book : mapper.selectList(null)) {
             System.out.println(book);
         }
     }
+
     @Test
-    void testPage(){
-        IPage page = new Page(1,2);
-        mapper.selectPage(page,null);
+    void testPage() {
+        IPage page = new Page(1, 2);
+        mapper.selectPage(page, null);
     }
 
     @Test
-    void testBy(){
+    void testBy() {
         /*
-        *
-        * 动态拼接条件查询
-        *
-        * */
+         *
+         * 动态拼接条件查询
+         *
+         * */
         String name = "1";
         LambdaQueryWrapper<Book> lqw = new LambdaQueryWrapper<>();
-        lqw.like(null != name,Book::getName,name);
+        lqw.like(null != name, Book::getName, name);
         for (Book book : mapper.selectList(lqw)) {
             System.out.println(book);
         }

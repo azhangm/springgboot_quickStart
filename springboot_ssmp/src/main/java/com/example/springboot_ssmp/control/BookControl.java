@@ -1,16 +1,11 @@
 package com.example.springboot_ssmp.control;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.example.springboot_ssmp.control.util.Result;
 import com.example.springboot_ssmp.domain.Book;
 import com.example.springboot_ssmp.service.BookService;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * @Description : 表现层开发  / books 标准开发的命名规范
@@ -23,23 +18,23 @@ public class BookControl {
    @Resource
    private BookService bookService;
     @GetMapping
-    public List<Book> selectAll(){
-        return bookService.list();
+    public Result selectAll(){
+        return new Result(true,bookService.list());
     }
     @GetMapping("{id}")
-    public Book selectBy(@PathVariable Integer id ){
-        return bookService.getById(id);
+    public Result selectBy(@PathVariable Integer id ){
+        return new Result(true,bookService.getById(id));
     }
     @PostMapping
-    public boolean save(@RequestBody Book book){
-       return bookService.save(book);
+    public Result save(@RequestBody Book book){
+       return new Result(bookService.save(book));
     }
     @PutMapping
-    public boolean modify(@RequestBody Book book){
-        return bookService.modify(book);
+    public Result modify(@RequestBody Book book){
+        return new Result(bookService.modify(book));
     }
     @GetMapping("{currentPage}/{pages}" )
-    public IPage<Book> selectByPage(@PathVariable int currentPage,@PathVariable int pages){
-        return bookService.selectPage(currentPage, pages);
+    public Result selectByPage(@PathVariable int currentPage,@PathVariable int pages){
+        return new Result(true,bookService.selectPage(currentPage,pages));
     }
 }

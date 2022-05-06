@@ -16,9 +16,9 @@ class BookServiceImplTest {
 
     @Test
     public void save() {
-        Book book1 = new Book(null,"大卷菜学Java","成为大佬的某一天","测试springboot 的入门");
+        Book book1 = new Book(null, "大卷菜学Java", "成为大佬的某一天", "测试springboot 的入门");
         Boolean save = bookService.save(book1);
-        System.out.println( save? "添加成功" : "添加失败");
+        System.out.println(save ? "添加成功" : "添加失败");
     }
 
     @Test
