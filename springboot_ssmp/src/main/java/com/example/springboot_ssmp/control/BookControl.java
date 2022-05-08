@@ -12,6 +12,7 @@ import javax.annotation.Resource;
  * @author: zm
  * @date: 2022年05月06日9:46
  */
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/books")
 public class BookControl {

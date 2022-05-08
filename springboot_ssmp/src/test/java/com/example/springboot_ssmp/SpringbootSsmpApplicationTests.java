@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
+import java.util.Scanner;
 
 @SpringBootTest
 class SpringbootSsmpApplicationTests {
@@ -20,9 +21,20 @@ class SpringbootSsmpApplicationTests {
     }
     @Test
     void testPage(){
-        /*配置分页拦截器*/
-        IPage<Book> page = new Page<Book>(2,5);
-        mapper.selectPage(page,null);
-    }
+              int n = 0 ;
+             int[] nums = new int[100010];
+                Scanner sc = new Scanner(System.in);
+                 n = sc.nextInt();
+                for (int i = 0 ; i < n; i ++){
+                    int q = sc.nextInt();
+                    nums[q] = 1;
+                }
+                for(int i = 1 ; i <= n; i ++){
+                    if (nums[i] == 0)
+                        System.out.println(nums[i]);
+                }
 
-}
+            }
+        }
+
+
